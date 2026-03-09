@@ -318,6 +318,17 @@ void func_802E4048(s32 map, s32 exit, s32 transition){
 
 //take me there
 void transitionToMap(enum map_e map, s32 exit, s32 transition){
+    if (level_get() == LEVEL_6_LAIR) {
+        // MOLES CAN'T TEACH BIRDS
+        if (!can_trot()) {
+            ability_unlock(ABILITY_10_TALON_TROT);
+            ability_unlock(ABILITY_11_TURBO_TALON);
+            ability_unlock(ABILITY_1_BEAK_BOMB);
+            ability_unlock(ABILITY_2_BEAK_BUSTER);
+            ability_unlock(ABILITY_D_SHOCK_JUMP);
+            ability_unlock(ABILITY_E_WADING_BOOTS);
+        } 
+    }
     func_802E40D0(map, exit);
     func_802E40E8(transition);
     func_802E40C4(1);
