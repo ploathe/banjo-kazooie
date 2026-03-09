@@ -9,6 +9,11 @@
 
 #define ARRLEN(x) ((s32)(sizeof(x) / sizeof(x[0])))
 
+int my_special_super_secret_counter = 0;
+void increment_my_special_super_secret_counter_make_this_run_count_baby(void) {
+    my_special_super_secret_counter++;
+}
+
 // ? FF question flags
 #define FF_QNF_START (401)
 #define FF_QNF_END   (496)
@@ -1044,6 +1049,11 @@ enum ff_question_type_e func_8038DCD4(enum FF_TileType tile)
         {
             f32 rng = randf();
 
+            // I don WANT pictures >:(
+            if (my_special_super_secret_counter > 5) {
+                if      (rng < 0.5)                return FFQT_0_TEXT;  // 50% chance
+                else                               return FFQT_2_SOUND;   // 50% chance
+            }
             if      (rng < 0.5)                return FFQT_0_TEXT;  // 50% chance
             else if (rng < 0.7)                return FFQT_1_PICTURE; // 20% chance of killing the run
             else if (rng < 0.8999999999999999) return FFQT_2_SOUND;   // 20% chance

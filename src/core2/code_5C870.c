@@ -562,6 +562,11 @@ bool func_802E4424(void) {
                 game_setMode(GAME_MODE_1_UNKNOWN, 0U);
             } else if (sp1C == 0) {
                 game_setMode(GAME_MODE_3_NORMAL, 1U);
+            } else if (bakey_pressed(BUTTON_D_UP)) {
+                if (map_get() == MAP_8E_GL_FURNACE_FUN){
+                    // i want to take matters of luck into my own hands!!
+                    increment_my_special_super_secret_counter_make_this_run_count_baby(); 
+                }
             }
             break;
 

@@ -140,4 +140,8 @@ void defragManager_resume(void);
 void defragManager_pause(void);
 void defragManager_setPriority(OSPri pri);
 
+/* src/lair/code5ED0.c */
+
+void increment_my_special_super_secret_counter_make_this_run_count_baby(void);
+
 #endif
